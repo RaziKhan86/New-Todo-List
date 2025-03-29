@@ -1,0 +1,130 @@
+/* body{
+    font-family: Arial;
+}
+.container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.todo-grid,
+.todo-input-grid {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+}
+.todo-input-grid{
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+.name-input,
+.due-date {
+    font-size: 15px;
+    padding: 6px;
+}
+.add-button{
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+.delete-button{
+    background-color: darkred;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} */
+
+
+
+body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    height: 100vh;  /* Ensure full viewport height */
+    display: flex;  /* Use flexbox for centering */
+    justify-content: center;  /* Horizontally center the content */
+    align-items: center;  /* Vertically center the content */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;  /* Align items in a column */
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-grid,
+.todo-input-grid {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;  /* Center the grid items horizontally */
+    align-items: center;  /* Center the grid items vertically */
+}
+
+.todo-input-grid{
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+
+.name-input,
+.due-date {
+    font-size: 15px;
+    padding: 6px;
+    width: 100%;  /* Ensure inputs span the full width of their column */
+    margin-right: 10px;
+}
+
+.add-button,
+.delete-button {
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;  /* Ensure buttons span the full width of their column */
+    cursor: pointer;
+}
+
+.add-button{
+    background-color: green;
+    color: white;
+    border: none;
+    text-align: center;  /* Center text in the button */
+}
+
+.delete-button{
+    background-color: darkred;
+    color: white;
+    border: none;
+    text-align: center;  /* Center text in the button */
+}
+@media only screen and (max-width: 600px) {
+    .todo-grid {
+        grid-template-columns: 1fr;  /* Switch to a single column layout */
+    }
+    
+    .todo-input-grid {
+        grid-template-columns: 1fr;  /* Stack inputs vertically */
+        width: 100%;
+    }
+
+    .name-input,
+    .due-date {
+        margin-right: 0;  /* Remove margin-right for smaller screens */
+    }
+
+    .container {
+        padding: 10px;  /* Reduce padding on smaller screens */
+        width: 90%;  /* Use more of the screen width */
+    }
+
+    .add-button,
+    .delete-button {
+        padding: 12px;  /* Adjust button padding for smaller screens */
+    }   
+}
