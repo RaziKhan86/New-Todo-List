@@ -14,20 +14,19 @@ let TodoList = [{
 function TodoItem() {
     let nameAddition = '';
 
-    for (let i = 0; i < TodoList.length; i++) {
-        const todoObject = TodoList[i];
+    //Using forEach loop for Display array value
+    TodoList.forEach(function(todoObject,index){
         const {name,dueDate} = todoObject;
         const html = `
         <div>${name}</div>
         <div>${dueDate}</div>
-        <button onclick="
-        TodoList.splice(${i},1);
+         <button onclick="
+        TodoList.splice(${index},1);
         TodoItem();
         " class="delete-button">Delete</button>
         `;
-        console.log(html);
-        nameAddition += html;
-    }
+        nameAddition += html;        
+    });
     divValue.innerHTML = nameAddition;
 }
 // Display the Todo name & Todo date when page will refresh
