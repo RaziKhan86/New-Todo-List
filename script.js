@@ -15,7 +15,7 @@ function TodoItem() {
     let nameAddition = '';
 
     //Using forEach loop for Display array value
-    TodoList.forEach(function(todoObject,index){
+    TodoList.forEach((todoObject,index) => { 
         const {name,dueDate} = todoObject;
         const html = `
         <div>${name}</div>
