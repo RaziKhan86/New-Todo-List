@@ -35,6 +35,10 @@ TodoItem();
 
 
 // Adding the TodoName and TodoDate into Array
+const addtodoButton = document.querySelector('.js-addTodo-button');
+addtodoButton.addEventListener('click',()=>{
+    AddTodo();
+});
 function AddTodo() {
     // For Adding Name & Date
     const Todoname = InputElement.value;
