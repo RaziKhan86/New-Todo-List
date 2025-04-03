@@ -15,19 +15,23 @@ function TodoItem() {
     let nameAddition = '';
 
     //Using forEach loop for Display array value
-    TodoList.forEach((todoObject,index) => { 
+    TodoList.forEach((todoObject) => { 
         const {name,dueDate} = todoObject;
         const html = `
         <div>${name}</div>
         <div>${dueDate}</div>
-         <button onclick="
-        TodoList.splice(${index},1);
-        TodoItem();
-        " class="delete-button">Delete</button>
+         <button class="delete-button js-add-todo-button">Delete</button>
         `;
         nameAddition += html;        
     });
     divValue.innerHTML = nameAddition;
+    document.querySelectorAll('.js-add-todo-button')
+     .forEach((deleteButton,index)=>{
+        deleteButton.addEventListener('click',()=>{
+        TodoList.splice(index,1);
+        TodoItem();
+        });
+     });
 }
 // Display the Todo name & Todo date when page will refresh
 TodoItem();
